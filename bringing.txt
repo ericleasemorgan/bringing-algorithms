@@ -1,0 +1,199 @@
+
+
+Bringing algorithms and machine learning into library collections & services
+
+
+Abstract
+
+Many aspects of librarianship have been automated to one degree or another. Now, in a time of "big data", is it possible to go beyond mere automation and towards the more intelligent use of computers; the use of algorithms and machine learning is an integral part of future library collection building and service provision. To make the point, this essay first highlights a number of changes in librarianship that were deemed revolutionary in their time but are now taken for granted. Second, this essay compares & contrasts library automation with the "intelligent" use of computers. Finally, this essay introduces an application/system called the Distant Reader which puts some of these ideas into practice. Librarianship is evolutionary. Algorithms and machine learning are not librarian replacements, but instead, they are additional tools in the professional toolbox. This essay outlines how & why. 
+
+
+Seemingly revolutionary changes
+
+At the time of their implementation, some changes in the practice of librarianship were deemed revolutionary, but now-a-days some of these same changes are deemed matter of fact. Take, for example, the idea of the catalog. For a long time a library catalog was merely an acquisitions list. Given some additional characteristics such as authors and topics, these acquisitions lists were manifested as books, books which could be mass printed and distributed. But the books were difficult to keep up to date, and they were expensive to print. As a consequence, library cards were invented, and the catalog became a massive set of drawers. Unfortunately, because the way catalog cards were produced, it is not feasible to assign more than three or four subject headings to any given book. If one does, then the number of catalog cards quickly gets out of hand. Also, the idea of sharing catalog cards between libraries was common, and the Library of Congress facilitated much of this work. With the advent of computers idea of sharing cataloging data as "MARC" (machine readable cataloging) became prevalent. The data structure of a MARC record is indicative of the time it was invented. Intended to be distributed on reel-to-reel tape, the MARC record is a sequencial data structure designed to be read from beginning to end, and all along there way there are checks & balances making insuring the record's integrity. Despite the apparent flexibility of a digital data structure, the tradition of three for four subject headings per book still holds true. Now-a-days, the data from MARC records is used to fill databases, the database's content is indexed, and items are located by searching the index. [1]
+
+The evolution of the venerable library catalog has spanned centuries, and each evolutionary change was seen a revolutionary. Moreover, each evolutionary change solved some problems but created new ones. None of the changes were cure-alls. 
+
+With the advent of the Internet, a host of other changes are happening in Library Land. Some of them are seen as revolutionary, and only time will tell whether or not these changes will persevere. Examples include but are not limited to: the creation & maintenance of institutional repositories, the increasing tendency to license content, the continuing dichotomy of the virtual library & library as place, the existence of digital scholarship centers, etc. [2]
+
+
+Working smarter, not harder
+
+It is ironic. Despite the fact that libraries have the world of knowledge at their fingertips, libraries do not operate very intelligently, but such a bold statement needs context. The application of computer technology to the practice of librarianship has almost exclusively been about automation, and it has not really taken advantage of computer technology.
+
+Let's enumerate the core functionalities of computers. First of all, they are capable of taking some sort of input, assigning the input to a variable, applying any number of functions to the variable, and outputting the result. This process ("computing") is akin to solving simple algebraic equations such as determining the area of a circle or estimating a distance traveled. There are two things of particular interest here. First, the input can be as simple as a number or a string (read "a word") or the input can be arbitrarily large combinations of both. Examples include the purchasing history of an individual or the complete works of Charles Dickens. Second, the functions applied to variables build upon themselves in a manner akin to Euclid's Elements; given a few assumptions it is possible to build up a set of rules and then articulate "truths". This is what computer programming libraries/modules do. [3]
+
+Second, computers are able to save, organize, and retrieve vast amounts of data. Like the functions that build upon themselves, the data computers save, organize, and retrieve can be compounded. More specifically, computers save "data" -- mere numbers and strings. But when the data is given context, such as a number denoted as date or a string denoted as a name, then the data is transformed into information. An example might include the year 1972 and the name of Blake. Given additional information which may be compared & contrasted to other information, knowledge can be created -- information put to use and understood. For example, Mary was born in 1951 and therefore she is 21 years older than Blake. Computers excel at saving, organizing, and retrieving data which leads to information and knowledge. The possibilities of computers dispensing wisdom  -- knowlege of a timeless nature -- is left for another essay.
+
+Finally, computers are very efficient at communicating with each other. The ubiquitous nature of computers and other "smart" devices combined with the Internet has literally facilitated billions of connections between computers (and people). Consequently the data computed upon and stored in one place can be transmitted to another place at all but the speed of light. Moreover, the transmission is an exact copy of the original. Again, like the process of computing and the process of storage, efficient computer communication builds upon itself with foreseen consequences. For example, few foresaw the demise of centralized information authorities. For example, with the advent of the Internet there is less of a need/desire for travel agents, movie reviewers, or dare I say it, libraries providing their traditional services. 
+
+Despite the functionality of computers and their place in libraries over the past fifty to sixty years, computers have mostly been used to automate library tasks. MARC automated the process of printing catalog cards and eventually the creation of "discovery systems". Libraries have used computers to automate the process of lending materials between themselves as well as to local learners, teachers, and scholars. Libraries use computers to store, organize, preserve, and disseminate the gray literature of our time, and we call these systems "institutional repositories". In all of these cases, the automation has been a good thing because efficiencies were gained, but the use of computers has not gone far enough nor really evolved. Libraries have not truly exploited the functionality of computers. For example, there are a myriad of other more efficient data structures than MARC making the creation of new, different, and unforeseen knowledge a real possibility. Lending and usage statistics are not routinely harvested nor organized for the purposes of monitoring nor predicting library patron needs/desires. The content of institutional repositories is usually born digital, but libraires have not exploited the full text nature of these things to create services going beyond rudimentary catalogs. 
+
+Computers can do so much more for libraries than mere automation. While I will never say computers are "smart", their fundamental characteristics do appear intelligent, especially when used at scale. The scale of computing has significantly changed for the past ten years, and with this change the concept of "machine learning" has become more feasible. The following sections outlines how libraries can go beyond automation, embrace machine learning, and ultimately evolve its ideas of collections and services. 
+
+
+Machine learning
+
+Machine learning is a computing process used to make decisions and predictions.
+
+In the past, compter-aided decision-making and predictions where accomplished by articulating large sets of if-then statements and navigating down a decision tree. The applications were extremely domain specific, and they weren't very scalable. Machine learning turns this process on its head. Instead of navigating down a tree, machine learning takes sets of previously made observations (think "decisions"), identifies patterns and anomalies in the observations, and saves the result as a mathematical model, which is really an n-dimensional array of vectors.  Observations outside the given observations are then compared to the model and depending on the resulting similarities or differences, decisions or predictions are drawn.
+
+Using such a process, there are really only four different types of machine learning: classification, clustering, regression, and dimension reduction. Classification is a supervised machine learning process used to subdivide a set of observations into smaller sets which have been previously articulated. For example, suppose you had a few  categories of restaurants such as American, French, Italian, or Chinese. Given a set of previously classified menus, one could create a model defining each category and then classify new, unseen menus. The classic classification example is the filtering of email. "Is this message 'spam' or 'ham'?" Clustering is an unsupervised machine learning process which also creates smaller sets from a large one, but clustering is not given a set of previously articulated categories. (That is what makes it "unsupervised".) Instead, the categories are created as an end result. Topic modeling is an example of clustering. Regression predicts a numeric value based on sets of dependent variables. For example, given things like annual income, education level, size of family, age, gender, religion, and employment status, then one might be able to predict how much money a person might spend on charity. Sometimes the number of characteristics of each observation is very large. Many times some of these characteristics do not play a significant role in decision-making nor prediction. Dimension reduction is another machine learning process, and it is used to eliminate these less-then-useful characteristics from the observations thus making classification, clustering, and regression easier. 
+
+There are many library-related problems that could be addressed through machine learning. I'm not necessarily advocating the implementation of the following ideas, but they are examples:
+
+  * given a set of previously checked out materials, suggest other materials to be checked out
+  
+  * given a list of licensed library resources used by an individual, suggest other resources to use
+  
+  * given a set of multimedia, enumerate characteristics of the media (number of faces, direction of angles, number and types of colors, etc.), and use the results to supplement bibliographic description
+  
+  * given full-text content harvested from just about anywhere (the Web, your institutional repository, your special collections department, etc.), analyze the content beyond free text, supplement your bibliographic descriptions, and create a faceted index
+    
+  * given a set of grant proposals, suggest library resources to be used in support of the grants
+  
+  * given a set of theses and disserations, predict where scholarship at your institution is growing, and use the results to more intelligently build your just-in-case collection; do the same thing with faculty publications
+  
+  * given the full text of reading materials assigned in a class, suggest library resources to support them
+  
+  * given the full text of articles as well as their bibliographic descriptions, predict and describe the sorts of things a specific journal title accepts or whether a given draft is good enough for the journal
+  
+  * given circulation histories, create more refined circulation patterns, and use the results to refine collection policies
+  
+  * given sets of reference interviews, create a chatbot to supplement reference services
+  
+  * given sets of previously cataloged items, determine whether or not the cataloging can be improved
+  
+  * given the full text of a set of desirable journal articles, create a search strategy to be applied against any number of bibliographic indexes; answer the proverbial question "Can you help me find more like this one?"
+
+
+Some machine learning activities
+
+I've really only employed machine learning a few times in my career. For example, I cut my teeth on machine learning through the use of MALLET against the creation of a system called Convocate. [MALLET, CONVOCATE]
+
+I use a desktop tool called Topic Modeling Tool, on an almost daily basis. [TOPICMODELTOOL] I've also written a few topic modeling applications.
+
+I have done the tiniest bit of classification, specifically against corporate press releases. Creating a classification for a small set of American literature is easy, and probably a good example.
+
+A high performance application/system called the Distant Reader employed both topic modeling and classification against an arbitrary volume of unstructured data (read "text"), but the Reader is not really a machine learning tool. Instead it uses a few machine learning techniques as well as natural language processes to to supplement the traditional reading process.
+
+
+
+Notes and links
+
+[1] For quick and easy-to-read histories of library catalogs and MARC see ["Catalogs, their history" and "MARC for library use"].
+
+[2] I presently work in a digital scholarship center. When you learn the definition of "digital scholarship", please tell me.
+
+[3] There is more irony here. Sets of computer functions are often called "libraries". Computer programmers would create sets of function (subroutines) and save them as a file. As more and more files were accumulated the collection was called a library. Files could then be checked out of the library and included in other computer programs. Unlike more traditional libraries, items did not have to be returned, nor were there any overdue notices issues. 
+
+[MALLET]
+
+[CONVOCATE]
+
+[TOPICMODELTOOL]
+
+
+Appendix A: train.py
+
+# train.py - given a file name and a list of directories, create a model for classifying similar items
+
+# require
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection         import train_test_split
+from sklearn.naive_bayes             import MultinomialNB
+import glob, os, pickle, sys
+
+# sanity check
+if len( sys.argv ) < 4 :
+	sys.stderr.write( 'Usage: ' + sys.argv[ 0 ] + " <model> <directory> <another directory> [<another directory> ...]\n" )
+	quit()
+
+# get the desired name of the output file
+model = sys.argv[ 1 ]
+
+# get the directories to process
+directories = []
+for i in range( 2, len( sys.argv ) ) : directories.append( sys.argv[ i ] )
+
+# initialize the data and its associated labels
+data   = []
+labels = []
+
+# process each given directory
+for directory in directories :
+
+	# find all the text files and get the directory's name
+	files = glob.glob( directory + "/*.txt" )
+	label = os.path.basename( directory )
+	
+	# process each file
+	for file in files :
+		
+		# open the file, read it, and update the lists of texts and labels
+		with open( file, 'r' ) as handle :
+			data.append( handle.read() )
+			labels.append( label )
+
+# divide the data/labels into training and testing sets
+data_train, data_test, labels_train, labels_test = train_test_split( data, labels )
+
+# vectorize the training data
+vectorizer = CountVectorizer( stop_words='english' )
+data_train = vectorizer.fit_transform( data_train )
+
+# model the training data and associated labels
+classifier = MultinomialNB()
+classifier.fit( data_train, labels_train )
+
+# vectorize the test set and generate classifications
+data_test       = vectorizer.transform( data_test )
+classifications = classifier.predict( data_test )
+
+# calculate and output accuracy
+count = 0
+for i in range( len( classifications ) ) :
+    if classifications[ i ] == labels_test[ i ] : count += 1
+print ( "Accuracy: %s%% \n" % ( int( ( count * 1.0 ) / len( classifications ) * 100 ) ) )
+
+# save and done
+with open( model, 'wb' ) as handle : pickle.dump( ( vectorizer, classifier ), handle )
+exit()
+
+
+Appendix B: classify
+
+# classify.py - given a previously saved classification model, classify a set of documents
+
+# require
+import glob, os, pickle, sys
+
+# sanity check
+if len( sys.argv ) != 3 :
+	sys.stderr.write( 'Usage: ' + sys.argv[ 0 ] + " <model> <directory>\n" )
+	quit()
+
+# get input
+model     = sys.argv[ 1 ]
+directory = sys.argv[ 2 ]
+
+# load the model
+with open( model, 'rb' ) as handle : ( vectorizer, classifier ) = pickle.load( handle )
+
+# process each unclassified (.txt) file
+for file in glob.glob( directory + "/*.txt" ) :
+	
+	# open, read, and classify a document
+	with open( file, 'r' ) as handle : classification = classifier.predict( vectorizer.transform( [ handle.read() ] ) )
+	
+	# output
+	print( "\t".join( ( classification[ 0 ], os.path.basename( file ) ) ) )
+	
+# done
+exit()
+
+
+--
+Eric Lease Morgan
+January 9, 2020
+
