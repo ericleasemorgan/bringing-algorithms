@@ -94,33 +94,43 @@ Notes and links
 [TOPICMODELTOOL]
 
 
-Appendix A: train.py
+Appendix A: Train and classify
 
-# train.py - given a file name and a list of directories, create a model for classifying similar items
+This appendix lists two Python programs. The first (train.py) creates a model for the classification of plain text files. The second (classify.py) uses the output of the first to classify new plain text files. For your convenience, the scripts and some sample data ought to be available on GitHub at https://github.com/ericleasemorgan/bringing-algorithms, but eventually this link will break.
 
-# require
+
+Train
+
+The following Python script is a simplistic classification training application.
+
+Given a file name and a list of directories containing .txt files, the script first reads all the files' contents and the names of their directories into sets of datum and labels (think "categories"). It then divides the data and labels into training and testing sets. Such is a best practice for these types of programs so the models can be evaluated for accuracy. Next, the script counts & tabulates ("vectorizes") the training data and creates a model of the data using a variation of the Naive Bayes algorithm. The script then counts & tabulates the test data, uses the model the classify the test data, and compares the resulting classifications to the originally supplied labels. The result is an accuracy score, and generally speaking, a score greater than 75% is on the road to success. A score of 50% is no better than flipping a coin. Finally, the model is saved to a file for later use.
+
+
+# train.py - given a file name and a list of directories containing .txt files, create a model for classifying similar items
+
+# require the libraries/modules that will do the work
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection         import train_test_split
 from sklearn.naive_bayes             import MultinomialNB
 import glob, os, pickle, sys
 
-# sanity check
+# sanity check; make sure the program has been given input
 if len( sys.argv ) < 4 :
 	sys.stderr.write( 'Usage: ' + sys.argv[ 0 ] + " <model> <directory> <another directory> [<another directory> ...]\n" )
 	quit()
 
-# get the desired name of the output file
+# get the name of the file where the model will be saved
 model = sys.argv[ 1 ]
 
-# get the directories to process
+# get the rest of the input, the names of directories to process
 directories = []
 for i in range( 2, len( sys.argv ) ) : directories.append( sys.argv[ i ] )
 
-# initialize the data and its associated labels
+# initialize the data to analyze and its associated labels
 data   = []
 labels = []
 
-# process each given directory
+# loop through each given directory
 for directory in directories :
 
 	# find all the text files and get the directory's name
@@ -130,70 +140,80 @@ for directory in directories :
 	# process each file
 	for file in files :
 		
-		# open the file, read it, and update the lists of texts and labels
+		# open the file
 		with open( file, 'r' ) as handle :
+		
+			# add the contents of the file to the data
 			data.append( handle.read() )
+			
+			# update the list of labels
 			labels.append( label )
 
-# divide the data/labels into training and testing sets
+# divide the data/labels into training sets and testing sets; a best practice
 data_train, data_test, labels_train, labels_test = train_test_split( data, labels )
 
-# vectorize the training data
+# initialize a vectorizer, and then count/tabulate the training data
 vectorizer = CountVectorizer( stop_words='english' )
 data_train = vectorizer.fit_transform( data_train )
 
-# model the training data and associated labels
+# initialize a classification model, and then use Naive Bayes to create a model
 classifier = MultinomialNB()
 classifier.fit( data_train, labels_train )
 
-# vectorize the test set and generate classifications
+# count/tabulate the test data, and use the model to classify it
 data_test       = vectorizer.transform( data_test )
 classifications = classifier.predict( data_test )
 
-# calculate and output accuracy
+# begin to test for accuracy
 count = 0
+
+# loop through each test classification
 for i in range( len( classifications ) ) :
+    
+    # increment, if the calculated classification match the given classification
     if classifications[ i ] == labels_test[ i ] : count += 1
+
+# calculate and output the accuracy score; above 75% begins to achieve success
 print ( "Accuracy: %s%% \n" % ( int( ( count * 1.0 ) / len( classifications ) * 100 ) ) )
 
-# save and done
+# save the vectorizer and the classifier (the model) for future use, and done
 with open( model, 'wb' ) as handle : pickle.dump( ( vectorizer, classifier ), handle )
 exit()
 
 
-Appendix B: classify
+Classify
 
-# classify.py - given a previously saved classification model, classify a set of documents
+The following Python script is a simplistic classification program.
 
-# require
+Given the model created by the previous script (train.py) and a directory containing a set of .txt files, this script will output a suggested label ("classification") and a file name for each file in the given directory. This script automatically classifies a set of plain text files.
+
+
+# classify.py - given a previously saved classification model and a directory of .txt files, classify a set of documents
+
+# require the libraries/modules that will do the work
 import glob, os, pickle, sys
 
-# sanity check
+# sanity check; make sure the program has been given input
 if len( sys.argv ) != 3 :
 	sys.stderr.write( 'Usage: ' + sys.argv[ 0 ] + " <model> <directory>\n" )
 	quit()
 
-# get input
+# get input; get the model to read and the directory containing the .txt files
 model     = sys.argv[ 1 ]
 directory = sys.argv[ 2 ]
 
-# load the model
+# read the model
 with open( model, 'rb' ) as handle : ( vectorizer, classifier ) = pickle.load( handle )
 
-# process each unclassified (.txt) file
+# process each .txt file
 for file in glob.glob( directory + "/*.txt" ) :
 	
-	# open, read, and classify a document
+	# open, read, and classify the file
 	with open( file, 'r' ) as handle : classification = classifier.predict( vectorizer.transform( [ handle.read() ] ) )
 	
-	# output
+	# output the classification and the file's name
 	print( "\t".join( ( classification[ 0 ], os.path.basename( file ) ) ) )
 	
 # done
 exit()
-
-
---
-Eric Lease Morgan
-January 9, 2020
 
