@@ -21,7 +21,19 @@ Working smarter, not harder
 
 It is ironic. Despite the fact that libraries have the world of knowledge at their fingertips, libraries do not operate very intelligently, but such a bold statement needs context. The application of computer technology to the practice of librarianship has almost exclusively been about automation, and it has not really taken advantage of computer technology.
 
-Let's enumerate the core functionalities of computers. First of all, they are capable of taking some sort of input, assigning the input to a variable, applying any number of functions to the variable, and outputting the result. This process ("computing") is akin to solving simple algebraic equations such as determining the area of a circle or estimating a distance traveled. There are two things of particular interest here. First, the input can be as simple as a number or a string (read "a word") or the input can be arbitrarily large combinations of both. Examples include the purchasing history of an individual or the complete works of Charles Dickens. Second, the functions applied to variables build upon themselves in a manner akin to Euclid's Elements; given a few assumptions it is possible to build up a set of rules and then articulate "truths". This is what computer programming libraries/modules do. [3]
+Let's enumerate the core functionalities of computers. First of all, computers... compute. They are given some sort of input, assign the input to a variable, apply any number of functions to the variable, and output the result. This process -- computing -- is akin to solving simple algebraic equations such as calculating the area of a circle or estimating a distance traveled. There are two things of particular interest here. First, the input can be as simple as a number or a string (read "a word") or the input can be arbitrarily large combinations of both. Examples of input include:
+
+  * 42
+  * 1776
+  * xyzzy
+  * George Washington
+  * a MARC record
+  * the circulation history and academic characteristics of an individual
+  * the full text and bibliographic description of all Charles Dickens's works
+
+Second, computing involves "function calls", subroutines which are used over and over in a computer program. These functions are applied to variables build upon themselves in a manner akin to Euclid's Elements; given a few assumptions it is possible to build up a set of rules and then articulate "truths". This is what computer programming libraries/modules do. [3]
+
+What is important here is the scale of a computer's input. Libraries have not taken advantage of that scale. Imagine how librarianship would change if the profession actively used the full text its collections to enhance bibliographic description and public services. Imagine how collection policies and patron needs could be better articulated if the totality of circulation histories and journal usage histories where thoroughly investigated, especially if the histories of other libraries were included. 
 
 Second, computers are able to save, organize, and retrieve vast amounts of data. Like the functions that build upon themselves, the data computers save, organize, and retrieve can be compounded. More specifically, computers save "data" -- mere numbers and strings. But when the data is given context, such as a number denoted as date or a string denoted as a name, then the data is transformed into information. An example might include the year 1972 and the name of Blake. Given additional information which may be compared & contrasted to other information, knowledge can be created -- information put to use and understood. For example, Mary was born in 1951 and therefore she is 21 years older than Blake. Computers excel at saving, organizing, and retrieving data which leads to information and knowledge. The possibilities of computers dispensing wisdom  -- knowlege of a timeless nature -- is left for another essay.
 
@@ -38,40 +50,55 @@ Machine learning is a computing process used to make decisions and predictions.
 
 In the past, compter-aided decision-making and predictions where accomplished by articulating large sets of if-then statements and navigating down a decision tree. The applications were extremely domain specific, and they weren't very scalable. Machine learning turns this process on its head. Instead of navigating down a tree, machine learning takes sets of previously made observations (think "decisions"), identifies patterns and anomalies in the observations, and saves the result as a mathematical model, which is really an n-dimensional array of vectors.  Observations outside the given observations are then compared to the model and depending on the resulting similarities or differences, decisions or predictions are drawn.
 
-Using such a process, there are really only four different types of machine learning: classification, clustering, regression, and dimension reduction. Classification is a supervised machine learning process used to subdivide a set of observations into smaller sets which have been previously articulated. For example, suppose you had a few  categories of restaurants such as American, French, Italian, or Chinese. Given a set of previously classified menus, one could create a model defining each category and then classify new, unseen menus. The classic classification example is the filtering of email. "Is this message 'spam' or 'ham'?" Clustering is an unsupervised machine learning process which also creates smaller sets from a large one, but clustering is not given a set of previously articulated categories. (That is what makes it "unsupervised".) Instead, the categories are created as an end result. Topic modeling is an example of clustering. Regression predicts a numeric value based on sets of dependent variables. For example, given things like annual income, education level, size of family, age, gender, religion, and employment status, then one might be able to predict how much money a person might spend on charity. Sometimes the number of characteristics of each observation is very large. Many times some of these characteristics do not play a significant role in decision-making nor prediction. Dimension reduction is another machine learning process, and it is used to eliminate these less-then-useful characteristics from the observations thus making classification, clustering, and regression easier. 
+Using such a process, there are really only four different types of machine learning: classification, clustering, regression, and dimension reduction. Classification is a supervised machine learning process used to subdivide a set of observations into smaller sets which have been previously articulated. For example, suppose you had a few  categories of restaurants such as American, French, Italian, or Chinese. Given a set of previously classified menus, one could create a model defining each category and then classify new, unseen menus. The classic classification example is the filtering of email. "Is this message 'spam' or 'ham'?"
 
-There are many library-related problems that could be addressed through machine learning. I'm not necessarily advocating the implementation of the following ideas, but they are examples:
+Clustering is an unsupervised machine learning process which also creates smaller sets from a large one, but clustering is not given a set of previously articulated categories. (That is what makes it "unsupervised".) Instead, the categories are created as an end result. Topic modeling is an example of clustering.
 
-  * given a set of previously checked out materials, suggest other materials to be checked out
+Regression predicts a numeric value based on sets of dependent variables. For example, given things like annual income, education level, size of family, age, gender, religion, and employment status, then one might be able to predict how much money a person might spend on charity.
+
+Sometimes the number of characteristics of each observation is very large. Many times some of these characteristics do not play a significant role in decision-making nor prediction. Dimension reduction is another machine learning process, and it is used to eliminate these less-then-useful characteristics from the observations thus making classification, clustering, and regression easier. 
+
+There are many ways to enhance library collections and services through the use of machine learning. I'm not necessarily advocating the implementation of the following ideas, but they are examples. Each is grouped into the broadest of library functional departments:
+
+
+  * reference and public services
+
+   o given a set of grant proposals, suggest library resources to be used in support of the grants
+
+   o given a set of licensed library resources and their usage, suggest other resources for use
+
+   o given a set of previously checked out materials, suggest other materials to be checked out
+
+   o given a set of reference interviews, create a chatbot to supplement reference services
+
+   o given the full text of a set of desirable journal articles, create a search strategy to be applied against any number of bibliographic indexes; answer the proverbial question, "Can you help me find more like this one?"
+
+   o given the full text of articles as well as their bibliographic descriptions, predict and describe the sorts of things a specific journal title accepts or whether a given draft is good enough for publication
+
+   o given the full text of reading materials assigned in a class, suggest library resources to support them
+
+
+  * technical services
+
+    o  given a set of multimedia, enumerate characteristics of the media (number of faces, direction of angles, number and types of colors, etc.), and use the results to supplement bibliographic description
+
+    o given a set of previously cataloged items, determine whether or not the cataloging can be improved
+
+    o given full-text content harvested from just about anywhere (the Web, your institutional repository, transcriptions from your special collections department, etc.), analyze the content in terms of natural language processsing, supplement your bibliographic descriptions, and provide services against the result
+
+
+  * collections
   
-  * given a list of licensed library resources used by an individual, suggest other resources to use
+    o given at full text of sets of theses and disserations, predict where scholarship at your institution is growing, and use the results to more intelligently build your just-in-case collection; do the same thing with faculty publications
   
-  * given a set of multimedia, enumerate characteristics of the media (number of faces, direction of angles, number and types of colors, etc.), and use the results to supplement bibliographic description
-  
-  * given full-text content harvested from just about anywhere (the Web, your institutional repository, your special collections department, etc.), analyze the content beyond free text, supplement your bibliographic descriptions, and create a faceted index
-    
-  * given a set of grant proposals, suggest library resources to be used in support of the grants
-  
-  * given a set of theses and disserations, predict where scholarship at your institution is growing, and use the results to more intelligently build your just-in-case collection; do the same thing with faculty publications
-  
-  * given the full text of reading materials assigned in a class, suggest library resources to support them
-  
-  * given the full text of articles as well as their bibliographic descriptions, predict and describe the sorts of things a specific journal title accepts or whether a given draft is good enough for the journal
-  
-  * given circulation histories, create more refined circulation patterns, and use the results to refine collection policies
-  
-  * given sets of reference interviews, create a chatbot to supplement reference services
-  
-  * given sets of previously cataloged items, determine whether or not the cataloging can be improved
-  
-  * given the full text of a set of desirable journal articles, create a search strategy to be applied against any number of bibliographic indexes; answer the proverbial question "Can you help me find more like this one?"
+    o given circulation histories, articulate more refined circulation patterns, and use the results to refine collection development policies
 
 
 Some machine learning activities
 
-I've really only employed machine learning a few times in my career. For example, I cut my teeth on machine learning through the use of MALLET against the creation of a system called Convocate. [MALLET, CONVOCATE]
+I've really only employed machine learning a few times in my career. For example, I cut my teeth on machine learning through the use of MALLET against the creation of a system called Convocate. [4, 5]
 
-I use a desktop tool called Topic Modeling Tool, on an almost daily basis. [TOPICMODELTOOL] I've also written a few topic modeling applications.
+I use a desktop tool called Topic Modeling Tool, on an almost daily basis. [6] I've also written a few topic modeling applications.
 
 I have done the tiniest bit of classification, specifically against corporate press releases. Creating a classification for a small set of American literature is easy, and probably a good example.
 
@@ -85,13 +112,13 @@ Notes and links
 
 [2] I presently work in a digital scholarship center. When you learn the definition of "digital scholarship", please tell me.
 
-[3] There is more irony here. Sets of computer functions are often called "libraries". Computer programmers would create sets of function (subroutines) and save them as a file. As more and more files were accumulated the collection was called a library. Files could then be checked out of the library and included in other computer programs. Unlike more traditional libraries, items did not have to be returned, nor were there any overdue notices issues. 
+[3] Here is some computer programming lore. Sets of computer function calls are often called "libraries". Computer programmers would save sets of function calls (subroutines) as files on the computer. As files of subroutines accumulated the collection was often called a "library". The metaphor worked well because the files could then be "checked out" of the "library" and included into other computer programs. What's more, this was an ideal library because the programmer did not need to return the materials, and consequently there were no overdue notices. 
 
-[MALLET]
+[4] See http://mallet.cs.umass.edu
 
-[CONVOCATE]
+[5] See https://convocate.nd.edu
 
-[TOPICMODELTOOL]
+[6] See https://github.com/senderle/topic-modeling-tool
 
 
 Appendix A: Train and classify
