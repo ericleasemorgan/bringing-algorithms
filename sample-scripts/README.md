@@ -46,7 +46,7 @@ To experiment even more:
    1. obtain a set of plain text files of another author
    2. put some of the new files into a diretory with the new author's name
    3. put the balance of the new files into the unclassified directory
-   4. re-run `train.py` making sure to include name of the new author's directory
+   4. re-run `train.py` making sure to include the name of the new author's directory
    5. as before, run `classify.py`
    
 Again the results ought to be similar.
