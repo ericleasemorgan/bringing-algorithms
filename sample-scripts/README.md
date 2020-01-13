@@ -30,7 +30,7 @@ Thus, the program loads the model, applies it to all the files in the given dire
 	  longfellow  longfellow-9080.txt
 	  emerson     emerson-6312.txt
 
-In other words, the program things the file named emerson-6312.txt has the label of "emerson", and the file named alcott-26041.txt has a label of "alcott". This is particular case, the training and classification scripts worked perfectly.
+In other words, the program thinks the file named emerson-6312.txt has the label of "emerson", and the file named alcott-26041.txt has a label of "alcott". This is particular case, the training and classification scripts worked perfectly.
 
 To experiment some more, try this:
 
@@ -45,7 +45,7 @@ To experiment even more:
 
    1. obtain a set of plain text files of another author
    2. put some of the new files into a diretory with the new author's name
-   3. put some of the new files into the unclassified directory
+   3. put the balance of the new files into the unclassified directory
    4. re-run `train.py` making sure to include name of the new author's directory
    5. as before, run `classify.py`
    
