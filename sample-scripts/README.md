@@ -4,31 +4,31 @@ This directory contains two Python scripts and a set of plain text files, and th
 
 It is assumed you already have Python installed. You will then want to install the necessary Python libraries/modules that will do the actual work:
 
-> `pip3 install -r requirements.txt`
-  
+`pip3 install -r requirements.txt`
+
 The directory has already been set up and configured for use. Thus you ought to be able to run the following command to create a classification model based on the contents of the alcott emerson longfellow and thoreau directories:
 
-> `python3 train.py model.bin alcott emerson longfellow thoreau`
+`python3 train.py model.bin alcott emerson longfellow thoreau`
 
 The output is two-fold. First, the program will output an accuracy score, and the score ought to be pretty high, if not 100%. Second, a file named "model.bin" will be created in the current directory. Run the command a few times and notice how the accuracy score may change. This is do to the fact that the sample data is being divided into different training and test sets each time it is run.
 
 Now that a model has been created, you can use it to classify other, unclassified documents. Again the directory has already been set up for doing so. To classify documents in the directory named unclassified, run:
 
-> `python3 classify.py model.bin unclassified`
+`python3 classify.py model.bin unclassified`
 
 Thus, the program loads the model, applies it to all the files in the given directory, and outputs a set of label/file name combinations, something like this:
 
-| alcott | alcott-4770.txt |
-   thoreau     thoreau-34392.txt
-   alcott      alcott-26041.txt
-   emerson     emerson-12843.txt
-   longfellow  longfellow-5436.txt
-   longfellow  longfellow-2039.txt
-   alcott      alcott-163.txt
-   alcott      alcott-38049.txt
-   alcott      alcott-34920.txt
-   longfellow  longfellow-9080.txt
-   emerson     emerson-6312.txt
+	  alcott      alcott-4770.txt
+	  thoreau     thoreau-34392.txt
+	  alcott      alcott-26041.txt
+	  emerson     emerson-12843.txt
+	  longfellow  longfellow-5436.txt
+	  longfellow  longfellow-2039.txt
+	  alcott      alcott-163.txt
+	  alcott      alcott-38049.txt
+	  alcott      alcott-34920.txt
+	  longfellow  longfellow-9080.txt
+	  emerson     emerson-6312.txt
 
 In other words, the program things the file named emerson-6312.txt has the label of "emerson", and the file named alcott-26041.txt has a label of "alcott". This is particular case, the training and classification scripts worked perfectly.
 
