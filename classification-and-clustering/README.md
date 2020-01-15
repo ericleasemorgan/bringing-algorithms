@@ -1,6 +1,11 @@
-# Simplistic training and classification scripts
+# Simplistic classification and visualized topic models
 
-This directory contains two Python scripts and a set of plain text files, and the intent is to use this directory's contents to: 1) train/create a classification model, and 2) apply the model to a set of unclassified documents.
+This directory contains a set of files used to demonstrate: 1) a simplistic machine learning classification system and 2) two methods for visualizing topic models.
+
+
+## Simplistic classification
+
+This section describes the use of two Python scripts and a set of plain text files. The intent is to use these files to: 1) train/create a classification model, and 2) apply the model to a set of unclassified documents.
 
 It is assumed you already have Python installed. You will then want to install the necessary Python libraries/modules that will do the actual work:
 
@@ -52,4 +57,15 @@ To experiment even more:
 Again the results ought to be similar.
 
 The next step is to read the contents of `train.py` and `classify.py` more closely. 
+
+
+## Visualizing topic models
+
+This section outlines how to: 1) use a program called Topic Modeling Tool to generate a list of latent themes, and 2) use two different methods to visualize the results.
+
+Topic Modeling Tool is a GUI/desktop version of the venerable MALLET suite of tools. To get started, first download and install Topic Modeling Tool. Second, create a directory called "corpus", and copy all the .txt files (except requirements.txt) from this distribution into the newly created directory. Third create a directory called "model".
+
+Open Topic Modeling Tool and configure it to do its good work. More specifically, specify "Input Dir..." to be the corpus directory, specify "Output Dir..." to be the model directory, and specify the "Number of topics" to equal 4. 
+
+Topic modeling is a unsupervised machine learning process. Given a set of documents and an integer (t), a topic modeler will identify t latent themes, where each theme is a list of words which appear relatively close to each to each other. There are many topic modeling algorithms, but LDA (Latent Dirichlet Allocation) is generally considered the best one. 
 
