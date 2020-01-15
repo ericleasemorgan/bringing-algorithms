@@ -63,9 +63,42 @@ The next step is to read the contents of `train.py` and `classify.py` more close
 
 This section outlines how to: 1) use a program called Topic Modeling Tool to generate a list of latent themes, and 2) use two different methods to visualize the results.
 
-Topic Modeling Tool is a GUI/desktop version of the venerable MALLET suite of tools. To get started, first download and install Topic Modeling Tool. Second, create a directory called "corpus", and copy all the .txt files (except requirements.txt) from this distribution into the newly created directory. Third create a directory called "model".
+Topic Modeling Tool is a GUI/desktop version of the venerable MALLET suite of tools. To get started, first download and install Topic Modeling Tool. Second, create a directory called "corpus", and copy (not move) all the .txt files from this distribution (except requirements.txt) into the newly created directory. Third create a directory called "model". Then:
 
-Open Topic Modeling Tool and configure it to do its good work. More specifically, specify "Input Dir..." to be the corpus directory, specify "Output Dir..." to be the model directory, and specify the "Number of topics" to equal 4. 
+   1. open Topic Modeling Tool
+   2. specify "Input Dir..." to be the corpus directory
+   3. specify "Output Dir..." to be the model directory
+   4. specify the "Number of topics" to equal 4
+   4. click "Optional Settings" and change "Number of topic words to print" to 3
+   
+The Optional Settings dialog ought to look something like this:
+
+[INSERT IMAGE-01 HERE.]
+
+To continue:
+
+   5. click "Ok"
+   6. click the "Learn Topics" button
+   
+The Tool will do its good work, and in less than a minute the console will look something like the following, and I have highlighted the resulting topics:
+
+[INSERT IMAGE-02 HERE.]
+
+At this point the topics may seem a bit confusing. While English stop words have been automatically removed, there may be other noise. To continue:
+
+   6. optionally, use your text editor to remove things like digits, additional stop words (like thee, thy, or thou) from the corpus, as well as weird punctation such as the underscore ("_") character
+   7. go to Step #5 until tired
+
+I have removed some of the extraneous data, and now my modeling looks like this:
+
+[INSERT IMAGE-02 HERE.]
+
+To create the first visualization, copy &amp; paste the topics into your favorite spreadsheet application, and then use the spreadsheet to create a pie chart of the result, such as this:
+
+
+
+
+
 
 Topic modeling is a unsupervised machine learning process. Given a set of documents and an integer (t), a topic modeler will identify t latent themes, where each theme is a list of words which appear relatively close to each to each other. There are many topic modeling algorithms, but LDA (Latent Dirichlet Allocation) is generally considered the best one. 
 
