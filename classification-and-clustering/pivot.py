@@ -17,14 +17,13 @@ file  = sys.argv[ 1 ]
 type  = sys.argv[ 2 ]
 index = sys.argv[ 3 ]
 
-# read the input
-df = pd.read_csv( file, index_col='filename')
-df = df.drop(['docId', 'id'], axis=1)
+# read the input and remove the unneeded columns
+df = pd.read_csv( file, index_col='filename' )
+df = df.drop( [ 'docId', 'id' ], axis=1 )
 
 # get the column names, normalize them, and update the headers accordingly
 topics = list( df.columns )
-for i in range( 1, len( topics ) ) :
-	topics[ i ] = topics[ i ].replace( ' ', '-' )
+for i in range( 1, len( topics ) ) : topics[ i ] = topics[ i ].replace( ' ', '-' )
 df.columns = topics
 
 # pivot, plot, and done
