@@ -1,6 +1,6 @@
 # Simplistic classification and visualizing topic models
 
-This directory contains a set of files used to demonstrate two things: 1) a simplistic machine learning classification system, and 2) a couple of rudimentary methods for visualizing topic models.
+This directory contains a set of files used to demonstrate two things: 1) a simplistic machine learning classification system, and 2) a couple of rudimentary methods for visualizing topic models. In the end, these things represent opportunities for librarianship. 
 
 
 ## Simplistic classification
@@ -74,31 +74,27 @@ At this point the topics may seem a bit confusing. While English stop words have
    6. optionally, use your text editor to remove things like digits, additional stop words (like thee, thy, or thou), as well as meaningless punctation marks such as underscore ("_")
    7. go to Step #5 until tired
 
-After removing cleaning/normalizing the corpus, the resulting topics are a bit more meaningful:
-
-[INSERT IMAGE HERE.]
-
 To create the first visualization:
 
    1. copy &amp; paste the topics into your favorite spreadsheet application
    2. remove the topic words
-   3. sort the spreadsheet on the scores
+   3. sort the spreadsheet by the scores
    4. create a pie chart of the result
 
-Using my spreadsheet, the results look like this:
+Using my spreadsheet, the result looks like this:
 
 [INSERT IMAGE HERE.]
 
 This tells me my corpus is 36% about Topic 0, 25% about Topic 3, etc. What is really interesting is the percentage of each topic; no topic necessarily dominates.
 
-By augmenting the topic model with metadata, it is easy to see how topics compare to the metadata, and Topic Modeling Tool makes this process easy. Here how:
+By augmenting the topic model with metadata, it is easy to see how topics, and Topic Modeling Tool makes this process easy. Here how:
 
    1. click the "Optional Settings..." button
    2. specify "Metadata File..." as authors.csv which is in this distribution
    3. click the "Ok" button
    4. click the "Learn Topics" button
 
-The Tool will do its good work, and the console's contents will be very similar. What is different is the underlying delimited data representing the model. To visualize this enhanced delimited data you will need to pivot it on a specific column and chart the results. An included Python script, `pivot.py` does this work. Run it sans any input to learn about the parameters it takes:
+The Tool will do its good work, and the console's contents will be very similar. What is different is the underlying delimited data representing the model. To visualize this enhanced delimited data you will need to pivot the data on a specific column and chart the results. The included Python script, `pivot.py` does this work. Run it sans any input to learn what parameters the script takes:
 
 `python3 pivot.py`
 
@@ -106,16 +102,17 @@ Next, run it with these parameters:
 
 `python3 pivot.py model/output_csv/topics-metadata.csv barh author`
 
-The result will be a set of bar charts illustrating how much each author discussed a given topic:
+The result will be a set of bar charts illustrating how much each authors' works are "about" a given topic:
 
 [INSERT IMAGE HERE.]
 
 As you can see, each author discuss a different topic almost exclusively. Emerson discusses men. Alcot discusses Jo. Thoreau discusses water. Longfellow discusses the heart. 
 
-As an extra exercise, use the authors.csv file as a template, change the author column to year, fill in the year of publication for each file, topic model the result, visualize it as a line chart, and see how themes may (or may not) have changed over time.
+As an extra exercise, use the authors.csv file as a template, change the author column to year, fill in the year of publication for each file, run the Tool again, visualize the results as a line chart, and see how themes may (or may not) have changed over time.
 
+## Summary
 
-Topic modeling is a unsupervised machine learning process. Given a set of documents and an integer (t), a topic modeler will identify t latent themes, where each theme is a list of words which appear relatively close to each to each other. There are many topic modeling algorithms, but LDA (Latent Dirichlet Allocation) is generally considered the best one. 
+The processes of machine learning, such automatic classification and the generation of latent themes, are opportunities for librarianship. The combination of full text, bibliographic description, and "intelligent" algorithms make for powerful tools to be applied to traditional library collections and services.
 
 --- 
 Eric Lease Morgan &lt;emorgan@nd.edu&gt;  
