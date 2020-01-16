@@ -9,7 +9,7 @@ This section describes the use of two Python scripts and a set of plain text fil
 
 `pip3 install -r requirements.txt`
 
-This repository has already been set up and configured for use. Consequently you ought to be able to run the following command (train.py) to create a classification model based on the contents of the alcott, emerson, longfellow, and thoreau directories:
+This repository has already been set up and configured for use. Consequently you ought to be able to run the following command (train.py) to create a classification model based on the contents of the alcott, emerson, longfellow, and thoreau directories:term
 
 `python3 train.py model.bin alcott emerson longfellow thoreau`
 
@@ -67,7 +67,7 @@ Topic Modeling Tool is a GUI/desktop version of the venerable MALLET suite of to
    
 The Tool will do its good work, and in less than a minute the console will look something like the following. I have highlighted the resulting topics:
 
-[INSERT IMAGE HERE.]
+![tool](./images/tool.png "Logo Title Text 1")
 
 At this point the topics may seem a bit confusing. While English stop words have been automatically removed, there may be additional noise. To continue:
 
@@ -85,20 +85,20 @@ Using my spreadsheet, the result looks like this:
 
 [INSERT IMAGE HERE.]
 
-This tells me my corpus is 36% about Topic 0, 25% about Topic 3, etc. What is really interesting is the percentage of each topic; no topic necessarily dominates.
+This tells me the corpus is 31% about Topic 2, 30% about Topic 0, etc. What is really interesting is the percentage of each topic; no topic necessarily dominates.
 
-By augmenting the topic model with metadata, it is easy to see how topics, and Topic Modeling Tool makes this process easy. Here how:
+By augmenting the topic model with metadata, it is easy to see how topics are related to the metadata. Topic Modeling Tool makes this process easy. Here how:
 
    1. click the "Optional Settings..." button
-   2. specify "Metadata File..." as authors.csv which is in this distribution
+   2. specify "Metadata File..." to be authors.csv, which is included in this distribution
    3. click the "Ok" button
    4. click the "Learn Topics" button
 
-The Tool will do its good work, and the console's contents will be very similar. What is different is the underlying delimited data representing the model. To visualize this enhanced delimited data you will need to pivot the data on a specific column and chart the results. The included Python script, `pivot.py` does this work. Run it sans any input to learn what parameters the script takes:
+The Tool will do its good work, and the console's contents will be very similar. What is different is the underlying delimited data representing the model. To visualize this enhanced delimited data you will need to pivot the data on a specific column and chart the results. The included Python script, `pivot.py` does this work. Run `pivot.py` sans any input to learn what parameters it requires:
 
 `python3 pivot.py`
 
-Next, run it with these parameters:
+Next, run the script with these parameters:
 
 `python3 pivot.py model/output_csv/topics-metadata.csv barh author`
 
@@ -106,13 +106,13 @@ The result will be a set of bar charts illustrating how much each authors' works
 
 [INSERT IMAGE HERE.]
 
-As you can see, each author discuss a different topic almost exclusively. Emerson discusses men. Alcot discusses Jo. Thoreau discusses water. Longfellow discusses the heart. 
+As you can see, each author discuss a different topic almost exclusively. Emerson discusses man. Alcot discusses Jo. Thoreau discusses Ben. Longfellow discusses the heart. 
 
 As an extra exercise, use the authors.csv file as a template, change the author column to year, fill in the year of publication for each file, run the Tool again, visualize the results as a line chart, and see how themes may (or may not) have changed over time.
 
 ## Summary
 
-The processes of machine learning, such automatic classification and the generation of latent themes, are opportunities for librarianship. The combination of full text, bibliographic description, and "intelligent" algorithms make for powerful tools to be applied to traditional library collections and services.
+The processes of machine learning, such automatic classification and topic modeling, are opportunities for librarianship. The combination of full text, bibliographic description, and "intelligent" algorithms make for powerful tools to be applied to traditional library collections and services.
 
 --- 
 Eric Lease Morgan &lt;emorgan@nd.edu&gt;  
