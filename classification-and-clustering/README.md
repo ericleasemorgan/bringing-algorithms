@@ -85,7 +85,6 @@ Using my spreadsheet, the result looks like this:
 
 <img src="./images/sheet.png" alt="sheet" width="640"/>
 
-
 This tells me the corpus is 31% about Topic 2, 30% about Topic 0, etc. What is really interesting is the percentage of each topic; no topic necessarily dominates.
 
 By augmenting the topic model with metadata, it is easy to see how topics are related to the metadata. Topic Modeling Tool makes this process easy. Here how:
