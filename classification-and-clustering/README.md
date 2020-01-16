@@ -67,7 +67,7 @@ Topic Modeling Tool is a GUI/desktop version of the venerable MALLET suite of to
    
 The Tool will do its good work, and in less than a minute the console will look something like the following. I have highlighted the resulting topics:
 
-![tool](./images/tool.png "Logo Title Text 1")
+<img src="./images/tool.png" alt="tool" width="640"/>
 
 At this point the topics may seem a bit confusing. While English stop words have been automatically removed, there may be additional noise. To continue:
 
@@ -83,7 +83,7 @@ To create the first visualization:
 
 Using my spreadsheet, the result looks like this:
 
-[INSERT IMAGE HERE.]
+<img src="./images/sheet.png" alt="sheet" width="640"/>
 
 This tells me the corpus is 31% about Topic 2, 30% about Topic 0, etc. What is really interesting is the percentage of each topic; no topic necessarily dominates.
 
@@ -104,7 +104,8 @@ Next, run the script with these parameters:
 
 The result will be a set of bar charts illustrating how much each authors' works are "about" a given topic:
 
-[INSERT IMAGE HERE.]
+<img src="./images/chart.png" alt="chart" width="640"/>
+
 
 As you can see, each author discuss a different topic almost exclusively. Emerson discusses man. Alcot discusses Jo. Thoreau discusses Ben. Longfellow discusses the heart. 
 
