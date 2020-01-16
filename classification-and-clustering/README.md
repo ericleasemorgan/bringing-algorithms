@@ -1,27 +1,25 @@
-# Simplistic classification and visualized topic models
+# Simplistic classification and visualizing topic models
 
-This directory contains a set of files used to demonstrate: 1) a simplistic machine learning classification system and 2) two methods for visualizing topic models.
+This directory contains a set of files used to demonstrate two things: 1) a simplistic machine learning classification system, and 2) a couple of rudimentary methods for visualizing topic models.
 
 
 ## Simplistic classification
 
-This section describes the use of two Python scripts and a set of plain text files. The intent is to use these files to: 1) train/create a classification model, and 2) apply the model to a set of unclassified documents.
-
-It is assumed you already have Python installed. You will then want to install the necessary Python libraries/modules that will do the actual work:
+This section describes the use of two Python scripts and a set of plain text files. The intent is to use these files to: 1) create/train a classification model, and 2) apply the model to a set of unclassified documents. It is assumed you already have Python installed. You will then want to install the necessary Python libraries/modules that will do the actual work, most specifically scikit-learn:
 
 `pip3 install -r requirements.txt`
 
-The directory has already been set up and configured for use. Thus you ought to be able to run the following command to create a classification model based on the contents of the alcott emerson longfellow and thoreau directories:
+This repository has already been set up and configured for use. Consequently you ought to be able to run the following command (train.py) to create a classification model based on the contents of the alcott, emerson, longfellow, and thoreau directories:
 
 `python3 train.py model.bin alcott emerson longfellow thoreau`
 
 The output is two-fold. First, the program will output an accuracy score, and the score ought to be pretty high, if not 100%. Second, a file named "model.bin" will be created in the current directory. Run the command a few times and notice how the accuracy score may change. This is do to the fact that the sample data is being divided into different training and test sets each time it is run.
 
-Now that a model has been created, you can use it to classify other, unclassified documents. Again the directory has already been set up for doing so. To classify documents in the directory named unclassified, run:
+Now that a model has been created, you can use it to classify other, unclassified documents. Again this repository has already been set up for doing so. To classify documents in the directory named unclassified, run:
 
 `python3 classify.py model.bin unclassified`
 
-Thus, the program loads the model, applies it to all the files in the given directory, and outputs a set of label/file name combinations, something like this:
+Classify.py loads the model, applies it to all the files in the given directory, and outputs a set of label/file name combinations, something like this:
 
 	  alcott      alcott-4770.txt
 	  thoreau     thoreau-34392.txt
@@ -35,18 +33,14 @@ Thus, the program loads the model, applies it to all the files in the given dire
 	  longfellow  longfellow-9080.txt
 	  emerson     emerson-6312.txt
 
-In other words, the program thinks the file named emerson-6312.txt has the label of "emerson", and the file named alcott-26041.txt has a label of "alcott". This is particular case, the training and classification scripts worked perfectly.
+In other words, the program "thinks" the file named emerson-6312.txt was written by Emerson, and the file named alcott-26041.txt was written by Alcott. This is particular case, the training and classification scripts worked perfectly. To experiment some more, try this:
 
-To experiment some more, try this:
-
-   1. return all the files in the unclassified directory into their respective author directories
+   1. return all the files in the unclassified directory to their respective author directories
    2. randomly pick a few files from each author directory and put them into the unclassified directory
    3. as before, run `train.py`
    4. as before, run `classify.py`
 
-The results ought to be very similar.
-
-To experiment even more:
+The results ought to be very similar. To experiment even more:
 
    1. obtain a set of plain text files of another author
    2. put some of the new files into a diretory with the new author's name
@@ -56,49 +50,73 @@ To experiment even more:
    
 Again the results ought to be similar.
 
-The next step is to read the contents of `train.py` and `classify.py` more closely. 
+These scripts, `train.py` and `classify.py` are simple and rudimentary. They ought to be considered a framework for other classification systems. Such is an exercise left up to the reader. 
 
 
 ## Visualizing topic models
 
-This section outlines how to: 1) use a program called Topic Modeling Tool to generate a list of latent themes, and 2) use two different methods to visualize the results.
+This section outlines how to: 1) use a program called Topic Modeling Tool to generate a list of latent themes from a corpus, and 2) use couple of different methods to visualize the results.
 
-Topic Modeling Tool is a GUI/desktop version of the venerable MALLET suite of tools. To get started, first download and install Topic Modeling Tool. Second, create a directory called "corpus", and copy (not move) all the .txt files from this distribution (except requirements.txt) into the newly created directory. Third create a directory called "model". Then:
+Topic Modeling Tool is a GUI/desktop version of the venerable MALLET suite of tools. To get started, first download and install Topic Modeling Tool. Second, create a directory called "corpus", and copy (not move) all the .txt files from this distribution (except requirements.txt) into the newly created directory. Third, create a directory called "model". Then:
 
    1. open Topic Modeling Tool
    2. specify "Input Dir..." to be the corpus directory
    3. specify "Output Dir..." to be the model directory
-   4. specify the "Number of topics" to equal 4
-   4. click "Optional Settings" and change "Number of topic words to print" to 3
+   4. specify "Number of topics" to equal 4
+   5. click the "Learn Topics" button
    
-The Optional Settings dialog ought to look something like this:
+The Tool will do its good work, and in less than a minute the console will look something like the following. I have highlighted the resulting topics:
 
-[INSERT IMAGE-01 HERE.]
+[INSERT IMAGE HERE.]
 
-To continue:
+At this point the topics may seem a bit confusing. While English stop words have been automatically removed, there may be additional noise. To continue:
 
-   5. click "Ok"
-   6. click the "Learn Topics" button
-   
-The Tool will do its good work, and in less than a minute the console will look something like the following, and I have highlighted the resulting topics:
-
-[INSERT IMAGE-02 HERE.]
-
-At this point the topics may seem a bit confusing. While English stop words have been automatically removed, there may be other noise. To continue:
-
-   6. optionally, use your text editor to remove things like digits, additional stop words (like thee, thy, or thou) from the corpus, as well as weird punctation such as the underscore ("_") character
+   6. optionally, use your text editor to remove things like digits, additional stop words (like thee, thy, or thou), as well as meaningless punctation marks such as underscore ("_")
    7. go to Step #5 until tired
 
-I have removed some of the extraneous data, and now my modeling looks like this:
+After removing cleaning/normalizing the corpus, the resulting topics are a bit more meaningful:
 
-[INSERT IMAGE-02 HERE.]
+[INSERT IMAGE HERE.]
 
-To create the first visualization, copy &amp; paste the topics into your favorite spreadsheet application, and then use the spreadsheet to create a pie chart of the result, such as this:
+To create the first visualization:
 
+   1. copy &amp; paste the topics into your favorite spreadsheet application
+   2. remove the topic words
+   3. sort the spreadsheet on the scores
+   4. create a pie chart of the result
 
+Using my spreadsheet, the results look like this:
 
+[INSERT IMAGE HERE.]
 
+This tells me my corpus is 36% about Topic 0, 25% about Topic 3, etc. What is really interesting is the percentage of each topic; no topic necessarily dominates.
+
+By augmenting the topic model with metadata, it is easy to see how topics compare to the metadata, and Topic Modeling Tool makes this process easy. Here how:
+
+   1. click the "Optional Settings..." button
+   2. specify "Metadata File..." as authors.csv which is in this distribution
+   3. click the "Ok" button
+   4. click the "Learn Topics" button
+
+The Tool will do its good work, and the console's contents will be very similar. What is different is the underlying delimited data representing the model. To visualize this enhanced delimited data you will need to pivot it on a specific column and chart the results. An included Python script, `pivot.py` does this work. Run it sans any input to learn about the parameters it takes:
+
+`python3 pivot.py`
+
+Next, run it with these parameters:
+
+`python3 pivot.py model/output_csv/topics-metadata.csv barh author`
+
+The result will be a set of bar charts illustrating how much each author discussed a given topic:
+
+[INSERT IMAGE HERE.]
+
+As you can see, each author discuss a different topic almost exclusively. Emerson discusses men. Alcot discusses Jo. Thoreau discusses water. Longfellow discusses the heart. 
+
+As an extra exercise, use the authors.csv file as a template, change the author column to year, fill in the year of publication for each file, topic model the result, visualize it as a line chart, and see how themes may (or may not) have changed over time.
 
 
 Topic modeling is a unsupervised machine learning process. Given a set of documents and an integer (t), a topic modeler will identify t latent themes, where each theme is a list of words which appear relatively close to each to each other. There are many topic modeling algorithms, but LDA (Latent Dirichlet Allocation) is generally considered the best one. 
 
+--- 
+Eric Lease Morgan &lt;emorgan@nd.edu&gt;  
+January 16, 2020
