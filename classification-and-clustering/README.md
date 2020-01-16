@@ -5,11 +5,11 @@ This directory contains a set of files used to demonstrate two things: 1) a simp
 
 ## Simplistic classification
 
-This section describes the use of two Python scripts and a set of plain text files. The intent is to use these files to: 1) create/train a classification model, and 2) apply the model to a set of unclassified documents. It is assumed you already have Python installed. You will then want to install the necessary Python libraries/modules that will do the actual work, most specifically scikit-learn:
+This section describes the use of two Python scripts and a set of plain text files. The intent is to use these files to: 1) create/train a classification model, and 2) apply the model to a set of unclassified documents. It is assumed you already have Python installed. You will then want to install the necessary Python libraries/modules that will do the actual work, most specifically scikit-learn, pandas, and matplotlib:
 
 `pip3 install -r requirements.txt`
 
-This repository has already been set up and configured for use. Consequently you ought to be able to run the following command (train.py) to create a classification model based on the contents of the alcott, emerson, longfellow, and thoreau directories:term
+This repository has already been set up and configured for use. Consequently you ought to be able to run the following command (`train.py`) to create a classification model based on the contents of the alcott, emerson, longfellow, and thoreau directories:
 
 `python3 train.py model.bin alcott emerson longfellow thoreau`
 
@@ -57,7 +57,7 @@ These scripts, `train.py` and `classify.py` are simple and rudimentary. They oug
 
 This section outlines how to: 1) use a program called Topic Modeling Tool to generate a list of latent themes from a corpus, and 2) use couple of different methods to visualize the results.
 
-Topic Modeling Tool is a GUI/desktop version of the venerable MALLET suite of tools. To get started, first download and install Topic Modeling Tool. Second, create a directory called "corpus", and copy (not move) all the .txt files from this distribution (except requirements.txt) into the newly created directory. Third, create a directory called "model". Then:
+[Topic Modeling Tool](https://github.com/senderle/topic-modeling-tool) is a GUI/desktop version of the venerable [MALLET](http://mallet.cs.umass.edu) suite of tools. To get started, first download and install Topic Modeling Tool. Second, create a directory called "corpus", and copy (not move) all the .txt files from this distribution (except requirements.txt) into the newly created directory. Third, create a directory called "model". Then:
 
    1. open Topic Modeling Tool
    2. specify "Input Dir..." to be the corpus directory
@@ -85,6 +85,7 @@ Using my spreadsheet, the result looks like this:
 
 <img src="./images/sheet.png" alt="sheet" width="640"/>
 
+
 This tells me the corpus is 31% about Topic 2, 30% about Topic 0, etc. What is really interesting is the percentage of each topic; no topic necessarily dominates.
 
 By augmenting the topic model with metadata, it is easy to see how topics are related to the metadata. Topic Modeling Tool makes this process easy. Here how:
@@ -106,14 +107,13 @@ The result will be a set of bar charts illustrating how much each authors' works
 
 <img src="./images/chart.png" alt="chart" width="640"/>
 
-
 As you can see, each author discuss a different topic almost exclusively. Emerson discusses man. Alcot discusses Jo. Thoreau discusses Ben. Longfellow discusses the heart. 
 
 As an extra exercise, use the authors.csv file as a template, change the author column to year, fill in the year of publication for each file, run the Tool again, visualize the results as a line chart, and see how themes may (or may not) have changed over time.
 
 ## Summary
 
-The processes of machine learning, such automatic classification and topic modeling, are opportunities for librarianship. The combination of full text, bibliographic description, and "intelligent" algorithms make for powerful tools to be applied to traditional library collections and services.
+The processes of machine learning -- such automatic classification and topic modeling -- are opportunities for librarianship. The combination of full text, bibliographic description, and "intelligent" algorithms make for powerful tools to be applied to library collections and services.
 
 --- 
 Eric Lease Morgan &lt;emorgan@nd.edu&gt;  
