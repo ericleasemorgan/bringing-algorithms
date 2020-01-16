@@ -107,7 +107,7 @@ The result will be a set of bar charts illustrating how much each authors' works
 
 <img src="./images/chart.png" alt="chart" width="640"/>
 
-As you can see, each author discuss a different topic almost exclusively. Emerson discusses man. Alcot discusses Jo. Thoreau discusses Ben. Longfellow discusses the heart. 
+As you can see, each author discuss a different topic almost exclusively. Emerson discusses man. Alcott discusses Jo. Thoreau discusses Ben. Longfellow discusses the heart. 
 
 As an extra exercise, use the authors.csv file as a template, change the author column to year, fill in the year of publication for each file, run the Tool again, visualize the results as a line chart, and see how themes may (or may not) have changed over time.
 
